@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block title %}{{ ticklist.title }}{% endblock %}
+
+{% block head %}
+  <link href="{% static 'css/about.css' %}" rel="stylesheet">
+  <script src="{% static 'js/articles.js' %}"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock head %}
+
+{% block main %}
+<img src="{% static 'img/pc.jpg' %}" style="width:100%; height:500px" class="w3-margin-top"> 
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide" style="font-size:30px;">ABOUT PRITILATA CHHATRINIBAS</span></h5>
+    <p>Established in 2000, Pritilata Chhatrinibas, is the only girls' hostel of Kalyani Government Engineering College. Surrounded by lush green on all sides, it is an abode to hard-working individuals with budding talents.</p>
+    <p>It consists of two wings- the old building which consists of approximately 40 rooms  and the new building consisting of approximately 10 rooms for freshers. All together it houses above 130 students per year. The hostel is well secured with two guards on duty all day round.</p>
+    <p>The environment is a progressive one which provides all kind of facilities a college student requires. At the same time, provides stage for nurturing the extra-curricular interests of the hosteliers.</p>
+    
+    
+
+
+
+<!-------------PORTFOLIO DETAILS--------------------------------------->
+  <div class="w3-panel w3-leftbar w3-light-grey" style="margin-top: 10em;">
+      <p><i>HOSTEL PORTFOLIO MEMBERS:</i></p>
+  </div>
+  
+	  <div class="card">
+	       <img src="{% static 'img/hs.jpg' %}" style="width:200px;  ">
+	       <h2>Moumita Das</h2>
+	       <h3 class="title">Hostel Secretary</h3>
+	       <p>+91 94755 07488</p>
+	   </div>
+	  <div class="card">
+	       <img src="{% static 'img/ahs.jpg' %}" style="width:200px;">
+	       <h2>Sanchita Sarkar</h2>
+	       <h3 class="title">Assistant Hostel Secretary</h3>
+	       <p>+91 95633 69069</p>
+	   </div>
+  	  <div class="card">
+	       <img src="{% static 'img/mess.jpg' %}" style="width:200px;">
+	       <h2>Debosmita Mondal</h2>
+	       <h3 class="title">Mess Secretary</h3>
+	       <p>+91 96146 53839</p>
+	   </div>
+	   <div class="card">
+	       <img src="{% static 'img/net.jpg' %}" style="width:200px;">
+	       <h2>Sudipa Mazumdar</h2>
+	       <h3 class="title">Net Secretary</h3>
+	       <p>+91 98315 56648</p>
+	   </div>
+     
+
+<!--------------------end------------------------------->
+
+    <div class="address">
+    <p><strong>Address:</strong>
+    <p> Pritilata Chhatrinibas</p>
+    <p> Near Kalyani Government Engineering College,</p>
+    <p> Kalyani, Nadia, West Bengal - 741235</p>
+    <p> College Website : <a href="www.kgec.edu.in">www.kgec.edu.in</a></p>
+  
+    </div>
+{% endblock main %}

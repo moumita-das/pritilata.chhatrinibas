@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block title %}{{ ticklist.title }}{% endblock %}
+
+{% block head %}
+  <link href="{% static 'css/ticklist.css' %}" rel="stylesheet">
+  <script src="{% static 'js/articles.js' %}"></script>
+{% endblock head %}
+
+{% block main %}
+<img src='http://tinyurl.com/y75yz37m' style="width:100%; height:500px">
+  <ol class="breadcrumb">
+    <li><a href="{% url 'ticklist' %}">{% trans 'Mess List' %}</a></li>
+    <li class="active">{% trans 'View Mess List' %}</li>
+  </ol>
+
+<a href="{% url 'edit'  %}" class="btn btn-primary pull-right">
+        <span class="glyphicon glyphicon-pencil"></span> {% trans "Edit Mess List" %}
+      </a>
+     <a href="{% url 'editSelective'  %}" class="btn btn-primary pull-right">
+        <span class="glyphicon glyphicon-pencil"></span> {% trans "Selectively Change Mess List" %}
+      </a>
+      <a href="{% url 'viewAll'  %}" class="btn btn-primary pull-right">
+        <span class="glyphicon glyphicon-pencil"></span> {% trans "View General List" %}
+      </a>
+
+<table id="showtoday">
+	<tr>
+		<td>Today</td>
+		<td>{{ today.0 }}</td>
+	</tr>
+	<tr>
+		<td>Morning</td>
+		<td>
+		    {% if today.1 == 'C' %}
+			Canceled
+		    {% elif today.1 == 'V' %}
+			Veg
+		    {% elif today.1 == 'N' %}
+			Non-Veg
+		    {% endif %}
+		  </td>
+	</tr>
+	<tr>
+		<td>Night</td>
+		<td>
+		    {% if today.2 == 'C' %}
+			Canceled
+		    {% elif today.2 == 'V' %}
+			Veg
+		    {% elif today.2 == 'N' %}
+			Non-Veg
+		    {% endif %}
+		  </td>
+	</tr>
+</table>
+  <table id="showticklist">
+	<thead>
+	  <tr>
+	    <th>Days</th>
+ 	    <th>Morning</th>
+	    <th>Night</th>
+	  </tr>
+        </thead>
+	<tbody>
+		{% for x in ticklist %}
+		<tr>  
+		  <td>{{ x.0 }}</td>
+		  <td>
+		    {% if x.1 == 'C' %}
+			Canceled
+		    {% elif x.1 == 'V' %}
+			Veg
+		    {% elif x.1 == 'N' %}
+			Non-Veg
+		    {% endif %}
+		  </td>
+		  <td>
+		    {% if x.2 == 'C' %}
+			Canceled
+		    {% elif x.2 == 'V' %}
+			Veg
+		    {% elif x.2 == 'N' %}
+			Non-Veg
+		    {% endif %}
+		  </td>
+    		</tr>	
+  		{% endfor %}
+	</tbody>
+  </table>
+{% endblock main %}
+
+
